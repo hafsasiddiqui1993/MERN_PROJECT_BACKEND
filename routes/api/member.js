@@ -37,7 +37,7 @@ routes.get("/registers", (req, res, next) => {
 });
 
 routes.post(
-  "/register",cors(),
+  "/register",
   [check("m_fullname", "Enter your Name").not().isEmpty()],
   [check("m_add", "Enter your Address").not().isEmpty()],
   [
