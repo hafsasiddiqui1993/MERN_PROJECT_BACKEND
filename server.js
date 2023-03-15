@@ -47,7 +47,9 @@ app.get("/",(req,res) =>{
 // app.use(cors({origin:"*",}))
 
 
-
+app.get("/", req,res) => {
+res setHeader("Access-Control-Allow-Credentials","true");
+res.send("API is running..");
 
 
 const PORT = 8000
