@@ -8,7 +8,7 @@ const SecKey = "Hello"
 
 const routes = express.Router()
 
-routes.post("/login",async(req,res)=>{
+routes.post("/login",cors(),async(req,res)=>{
     const{m_email, m_pass} = req.body
     // console.log(req.body) 
      try{
