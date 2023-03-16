@@ -3,8 +3,7 @@ const SecKey = "Hello"
 function authentication (req, res, next){
 
     const Token = req.headers.tokenization; 
-console.log(Token)
-console.log(req.headers)
+
 
 try{    
 if (Token==null) {

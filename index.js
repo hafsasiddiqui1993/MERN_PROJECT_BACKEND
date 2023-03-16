@@ -2,7 +2,6 @@ require('dotenv').config({path: './config/key.env'})
 const express = require('express')
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
-const cors = require("cors");
 
 
 
@@ -11,7 +10,6 @@ const app = express()
 const cors = require("cors");
 app.use(cors({origin:"*"}))
 
-app.use(cors({origin:"*"}))
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))

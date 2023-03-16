@@ -42,9 +42,6 @@ routes.post(
   "/member/exercise_activity",
   Auth,
   async (req, res) => {
-    console.log(req.Another);
-    console.log("req.body");
-    console.log(req.body);
 
     try {
       const Result = await Activity.create({
@@ -56,8 +53,8 @@ routes.post(
         exe_ac_date: req.body.exe_ac_date,
       });
 
-      const ch = await Result.save();
-      return res.send(ch);
+      await Result.save();
+       res.send(Result);
     } catch (e) {
       res.status(400).send(e.message);
     }
