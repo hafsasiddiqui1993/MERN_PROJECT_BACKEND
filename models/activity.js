@@ -36,10 +36,10 @@ const Activityschema = new Schema({
     //     contentType: String
     // },
 
-    exe_ac_img:{
-        type: String,
-        required: true  
-    },
+    // exe_ac_img:{
+    //     type: String,
+    //     required: true  
+    // },
 
     since: {
         type: Date,

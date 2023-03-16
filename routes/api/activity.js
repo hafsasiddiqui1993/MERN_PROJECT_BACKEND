@@ -40,12 +40,11 @@ routes.get("/member/exercise_activity", Auth, async (req, res) => {
 
 routes.post(
   "/member/exercise_activity",
-  upload.single("exe_ac_img"),
   Auth,
   async (req, res) => {
     console.log(req.Another);
+    console.log("req.body");
     console.log(req.body);
-    console.log(req.file);
 
     try {
       const Result = await Activity.create({
@@ -55,7 +54,6 @@ routes.post(
         exe_ac_type: req.body.exe_ac_type,
         exe_ac_dur: req.body.exe_ac_dur,
         exe_ac_date: req.body.exe_ac_date,
-        exe_ac_img: req.file.path,
       });
 
       const ch = await Result.save();
@@ -99,11 +97,10 @@ routes.get("/member/exercise_activity/:id", async (req, res) => {
     }
   });
 
-routes.put("/member/edit_exercise_activity/:id",upload.single("exe_ac_img"), Auth, async (req, res) => {
+routes.put("/member/edit_exercise_activity/:id", Auth, async (req, res) => {
   try {
     const id = req.params.id;
     const updates =  req.body
-    updates.exe_ac_img =  req.file.path
     console.log(id);
     console.log("updates");
     console.log(updates);

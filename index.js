@@ -2,18 +2,20 @@ require('dotenv').config({path: './config/key.env'})
 const express = require('express')
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
+const cors = require("cors");
 
 
 
 
 const app = express()
-const cors = require("cors");
+
 app.use(cors({origin:"*"}))
 
-
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 
 app.use(cookieParser())
+
 const MyDB = require('./db')
 const routes = require('./routes/api/member')
 const routesactivity = require('./routes/api/activity')
